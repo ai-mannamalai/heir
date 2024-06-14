@@ -102,5 +102,22 @@ def RotateAndReduce : Pass<"rotate-and-reduce"> {
   let dependentDialects = ["mlir::heir::tensor_ext::TensorExtDialect"];
 }
 
+def SIMDVectorize : Pass<"simd-vectorize"> {
+  let summary = "Vectorize arbitrary input tensors into SIMD slots";
+  let description = [{
+  This pass vectorizes arbitrary input tensors into SIMD slots.
+
+  By default, it finds the minimum power of two to zero pad the input before
+  replicating or splitting it into the output shape determined by `numSlots`.
+  }];
+  let dependentDialects = ["mlir::heir::tensor_ext::TensorExtDialect"];
+
+  let options = [
+    Option<"numSlots", "num-slots", "int",
+           /*default=*/"1024", "Number of SIMD slots, corresponding to the "
+           "degree of the cyclotomic polynomial modulus to use for ciphertext "
+           "space.">
+  ];
+}
 
 #endif  // LIB_DIALECT_TENSOREXT_TRANSFORMS_PASSES_TD_
