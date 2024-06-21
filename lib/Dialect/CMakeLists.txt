@@ -1,2 +1,2 @@
-add_subdirectory(Openfhe)
 add_subdirectory(LWE)
+add_subdirectory(Openfhe)

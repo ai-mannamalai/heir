@@ -26,3 +26,4 @@ add_mlir_dialect_library(MLIRLWE
 set(LLVM_TARGET_DEFINITIONS PolynomialCanonicalization.td)
 mlir_tablegen(PolynomialCanonicalization.inc -gen-rewriters)
 add_public_tablegen_target(MLIRPolynomialCanonicalizationIncGen)
+add_dependencies(MLIRLWE MLIRLWEAttributesIncGen)

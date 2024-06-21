@@ -13,3 +13,4 @@ add_mlir_dialect_library(MLIROpenfhe
 	MLIRIR
         MLIRInferTypeOpInterface
 )
+add_dependencies(MLIROpenfhe MLIRLWE)
