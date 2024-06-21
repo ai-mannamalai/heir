@@ -14,14 +14,14 @@
 #include "mlir/include/mlir/IR/DialectImplementation.h"  // from @llvm-project
 
 // Generated definitions
-#include "lib/Dialect/LWE/IR/LWEDialect.cpp.inc"
+#include "lib/Dialect/LWE/IR/LWEOpsDialect.cpp.inc"
 #include "mlir/include/mlir/IR/Types.h"               // from @llvm-project
 #include "mlir/include/mlir/Support/LLVM.h"           // from @llvm-project
 #include "mlir/include/mlir/Support/LogicalResult.h"  // from @llvm-project
 #define GET_ATTRDEF_CLASSES
 #include "lib/Dialect/LWE/IR/LWEAttributes.cpp.inc"
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/LWE/IR/LWETypes.cpp.inc"
+#include "lib/Dialect/LWE/IR/LWEOpsTypes.cpp.inc"
 #define GET_OP_CLASSES
 #include "lib/Dialect/LWE/IR/LWEOps.cpp.inc"
 
@@ -36,7 +36,7 @@ void LWEDialect::initialize() {
       >();
   addTypes<
 #define GET_TYPEDEF_LIST
-#include "lib/Dialect/LWE/IR/LWETypes.cpp.inc"
+#include "lib/Dialect/LWE/IR/LWEOpsTypes.cpp.inc"
       >();
   addOperations<
 #define GET_OP_LIST

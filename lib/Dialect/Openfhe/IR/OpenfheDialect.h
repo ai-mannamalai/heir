@@ -7,6 +7,6 @@
 #include "mlir/include/mlir/IR/DialectImplementation.h"  // from @llvm-project
 
 // Generated headers (block clang-format from messing up order)
-#include "lib/Dialect/Openfhe/IR/OpenfheDialect.h.inc"
+#include "lib/Dialect/Openfhe/IR/OpenfheOpsDialect.h.inc"
 
 #endif  // LIB_DIALECT_OPENFHE_IR_OPENFHEDIALECT_H_

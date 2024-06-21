@@ -5,6 +5,6 @@
 #include "lib/Dialect/LWE/IR/LWEDialect.h"
 
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/LWE/IR/LWETypes.h.inc"
+#include "lib/Dialect/LWE/IR/LWEOpsTypes.h.inc"
 
 #endif  // HEIR_LIB_DIALECT_LWE_IR_LWETYPES_H_

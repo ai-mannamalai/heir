@@ -1,3 +1,8 @@
+
+#include "mlir/Pass/Pass.h"
+
+#include "mlir/IR/BuiltinOps.h"
+
 #include "lib/Dialect/LWE/Transforms/SetDefaultParameters.h"
 
 #include "lib/Dialect/LWE/IR/LWEOps.h"

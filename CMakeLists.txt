@@ -4,7 +4,7 @@ if(POLICY CMP0116)
   cmake_policy(SET CMP0116 OLD)
 endif()
 
-project(tosa-tstream-compiler LANGUAGES CXX C)
+project(HEIR LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard to conform to")
 
@@ -33,5 +33,6 @@ add_definitions(${LLVM_DEFINITIONS})
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
 
+set(HEIRLIBDIR ${CMAKE_CURRENT_SOURCE_DIR})
 add_subdirectory(lib)
 add_subdirectory(tools)

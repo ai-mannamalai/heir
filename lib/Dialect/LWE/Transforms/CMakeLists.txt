@@ -1,5 +1,3 @@
 set(LLVM_TARGET_DEFINITIONS Passes.td)
-mlir_tablegen(Passes.td -gen-typedef-decls -gen-attrdef-decls -typedefs-dialect="lwe")
-mlir_tablegen(Passes.cpp.inc -gen-attrdef-defs -attrdefs-dialect=lwe)
-mlir_tablegen(Passes.h.inc -gen-attrdef-decls -attrdefs-dialect=lwe)
+mlir_tablegen(Passes.h.inc -gen-pass-decls -name lwe)
 add_public_tablegen_target(MLIRLWEPassesIncGen)

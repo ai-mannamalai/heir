@@ -47,7 +47,7 @@ gentbl_cc_library(
             [
                 "-gen-dialect-decls",
             ],
-            "OpenfheDialect.h.inc",
+            "OpenfheDialectOps.h.inc",
         ),
         (
             [

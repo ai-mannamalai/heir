@@ -55,7 +55,7 @@ gentbl_cc_library(
             [
                 "-gen-dialect-decls",
             ],
-            "LWEDialect.h.inc",
+            "LWEOpsDialect.h.inc",
         ),
         (
             [
