@@ -1,0 +1,1 @@
+add_mlir_dialect(TfheRustBoolOps tfhe_rust_bool)
