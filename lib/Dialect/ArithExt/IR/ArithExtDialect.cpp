@@ -14,7 +14,7 @@
 // NOLINTEND(misc-include-cleaner)
 
 // Generated definitions
-#include "lib/Dialect/ArithExt/IR/ArithExtDialect.cpp.inc"
+#include "lib/Dialect/ArithExt/IR/ArithExtOpsDialect.cpp.inc"
 
 #define GET_OP_CLASSES
 #include "lib/Dialect/ArithExt/IR/ArithExtOps.cpp.inc"

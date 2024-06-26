@@ -13,7 +13,7 @@ cc_library(
         "ArithExtDialect.cpp",
     ],
     hdrs = [
-        "ArithExtDialect.h",
+        "ArithExtOpsDialect.h",
         "ArithExtOps.h",
     ],
     deps = [
@@ -51,13 +51,13 @@ gentbl_cc_library(
             [
                 "-gen-dialect-decls",
             ],
-            "ArithExtDialect.h.inc",
+            "ArithExtOpsDialect.h.inc",
         ),
         (
             [
                 "-gen-dialect-defs",
             ],
-            "ArithExtDialect.cpp.inc",
+            "ArithExtOpsDialect.cpp.inc",
         ),
     ],
     tblgen = "@llvm-project//mlir:mlir-tblgen",
