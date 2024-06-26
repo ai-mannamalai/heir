@@ -6,8 +6,8 @@ add_subdirectory(PolyExt)
 add_subdirectory(LWE)
 add_subdirectory(Openfhe)
 add_subdirectory(RNS)
-# add_subdirectory(TfheRust)
-# add_subdirectory(TfheRustBool)
+add_subdirectory(TfheRust)
+add_subdirectory(TfheRustBool)
 
 # IR + Transforms
 # BGV

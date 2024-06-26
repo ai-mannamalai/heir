@@ -4,6 +4,6 @@
 #include "lib/Dialect/TfheRustBool/IR/TfheRustBoolDialect.h"
 
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/TfheRustBool/IR/TfheRustBoolTypes.h.inc"
+#include "lib/Dialect/TfheRustBool/IR/TfheRustBoolOpsTypes.h.inc"
 
 #endif  // LIB_DIALECT_TFHERUSTBOOL_IR_TFHERUSTBOOLTYPES_H_

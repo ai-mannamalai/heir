@@ -8,7 +8,7 @@
 #include "mlir/include/mlir/IR/OpDefinition.h"           // from @llvm-project
 
 // Generated headers (block clang-format from messing up order)
-#include "lib/Dialect/TfheRustBool/IR/TfheRustBoolDialect.h.inc"
+#include "lib/Dialect/TfheRustBool/IR/TfheRustBoolOpsDialect.h.inc"
 
 namespace mlir {
 namespace heir {

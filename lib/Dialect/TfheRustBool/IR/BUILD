@@ -8,12 +8,12 @@ package(
 cc_library(
     name = "Dialect",
     srcs = [
-        "TfheRustBoolDialect.cpp",
+        "TfheRustBoolOpsDialect.cpp",
     ],
     hdrs = [
-        "TfheRustBoolDialect.h",
+        "TfheRustBoolOpsDialect.h",
         "TfheRustBoolOps.h",
-        "TfheRustBoolTypes.h",
+        "TfheRustBoolOpsTypes.h",
     ],
     deps = [
         ":dialect_inc_gen",
@@ -47,13 +47,13 @@ gentbl_cc_library(
             [
                 "-gen-dialect-decls",
             ],
-            "TfheRustBoolDialect.h.inc",
+            "TfheRustBoolOpsDialect.h.inc",
         ),
         (
             [
                 "-gen-dialect-defs",
             ],
-            "TfheRustBoolDialect.cpp.inc",
+            "TfheRustBoolOpsDialect.cpp.inc",
         ),
         (
             [
@@ -77,14 +77,14 @@ gentbl_cc_library(
                 "-gen-typedef-decls",
                 "-typedefs-dialect=tfhe_rust_bool",
             ],
-            "TfheRustBoolTypes.h.inc",
+            "TfheRustBoolOpsTypes.h.inc",
         ),
         (
             [
                 "-gen-typedef-defs",
                 "-typedefs-dialect=tfhe_rust_bool",
             ],
-            "TfheRustBoolTypes.cpp.inc",
+            "TfheRustBoolOpsTypes.cpp.inc",
         ),
         (
             [
