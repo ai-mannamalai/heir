@@ -32,6 +32,6 @@ class PatternRewriter;
 }
 
 #define GET_OP_CLASSES
-#include "lib/Dialect/Comb/IR/Comb.h.inc"
+#include "lib/Dialect/Comb/IR/CombOps.h.inc"
 
 #endif  // HEIR_LIB_DIALECT_COMB_COMBOPS_H

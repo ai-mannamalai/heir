@@ -20,6 +20,6 @@
 #include "lib/Dialect/Comb/IR/CombOpsDialect.h.inc"
 
 // Pull in all enum type definitions and utility function declarations.
-//#include "lib/Dialect/Comb/IR/CombEnums.h.inc"
+#include "lib/Dialect/Comb/IR/CombEnums.h.inc"
 
 #endif  // HEIR_LIB_DIALECT_COMB_COMBDIALECT_H

@@ -14,7 +14,7 @@
 #include "mlir/include/mlir/Support/LLVM.h"              // from @llvm-project
 
 // Generated definitions
-#include "lib/Dialect/BGV/IR/BGVDialect.cpp.inc"
+#include "lib/Dialect/BGV/IR/BGVOpsDialect.cpp.inc"
 #include "mlir/include/mlir/Support/LogicalResult.h"  // from @llvm-project
 #define GET_OP_CLASSES
 #include "lib/Dialect/BGV/IR/BGVOps.cpp.inc"
