@@ -18,7 +18,7 @@
 #define HEIR_LIB_DIALECT_COMB_COMBINATIONAL_TD
 
 include "lib/Dialect/HEIRInterfaces.td"
-
+include "lib/Dialect/Comb/IR/CombDialect.td"
 include "mlir/Interfaces/InferTypeOpInterface.td"
 include "mlir/IR/BuiltinAttributes.td"
 include "mlir/IR/EnumAttr.td"

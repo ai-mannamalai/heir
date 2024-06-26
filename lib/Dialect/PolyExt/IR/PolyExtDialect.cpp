@@ -9,7 +9,7 @@
 #include "mlir/include/mlir/Support/LLVM.h"              // from @llvm-project
 
 // Generated definitions.
-#include "lib/Dialect/PolyExt/IR/PolyExtDialect.cpp.inc"
+#include "lib/Dialect/PolyExt/IR/PolyExtOpsDialect.cpp.inc"
 #define GET_OP_CLASSES
 #include "lib/Dialect/PolyExt/IR/PolyExtOps.cpp.inc"
 

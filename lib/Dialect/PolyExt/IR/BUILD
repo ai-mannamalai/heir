@@ -10,10 +10,10 @@ package(
 cc_library(
     name = "Dialect",
     srcs = [
-        "PolyExtDialect.cpp",
+        "PolyExtOpsDialect.cpp",
     ],
     hdrs = [
-        "PolyExtDialect.h",
+        "PolyExtOpsDialect.h",
         "PolyExtOps.h",
     ],
     deps = [

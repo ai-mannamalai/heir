@@ -7,6 +7,6 @@
 #include "mlir/include/mlir/IR/DialectImplementation.h"  // from @llvm-project
 
 // Generated headers (block clang-format from messing up order)
-#include "lib/Dialect/PolyExt/IR/PolyExtDialect.h.inc"
+#include "lib/Dialect/PolyExt/IR/PolyExtOpsDialect.h.inc"
 
 #endif  // HEIR_LIB_DIALECT_POLYEXT_IR_POLYEXTDIALECT_H_

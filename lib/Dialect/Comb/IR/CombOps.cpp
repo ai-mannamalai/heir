@@ -11,7 +11,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "lib/Dialect/Comb/IR/CombOps.h"
-
+#include "lib/Dialect/Comb/IR/CombDialect.h"
 #include "llvm/include/llvm/Support/FormatVariadic.h"   // from @llvm-project
 #include "mlir/include/mlir/IR/Builders.h"              // from @llvm-project
 #include "mlir/include/mlir/IR/ImplicitLocOpBuilder.h"  // from @llvm-project

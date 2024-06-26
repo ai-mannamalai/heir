@@ -17,9 +17,9 @@
 #include "mlir/include/mlir/IR/Dialect.h"            // from @llvm-project
 
 // Pull in the Dialect definition.
-#include "lib/Dialect/Comb/IR/CombDialect.h.inc"
+#include "lib/Dialect/Comb/IR/CombOpsDialect.h.inc"
 
 // Pull in all enum type definitions and utility function declarations.
-#include "lib/Dialect/Comb/IR/CombEnums.h.inc"
+//#include "lib/Dialect/Comb/IR/CombEnums.h.inc"
 
 #endif  // HEIR_LIB_DIALECT_COMB_COMBDIALECT_H
