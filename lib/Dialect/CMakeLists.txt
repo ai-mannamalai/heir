@@ -8,9 +8,8 @@ add_subdirectory(TfheRust)
 add_subdirectory(TfheRustBool)
 
 add_subdirectory(BGV)
+add_subdirectory(CGGI)
 # IR + Transforms
-# BGV
-# CGGI
 # Secret
 # TensorExt
 

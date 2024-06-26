@@ -5,7 +5,7 @@
 #include "lib/Dialect/CGGI/IR/CGGIOps.h"
 
 // Generated definitions
-#include "lib/Dialect/CGGI/IR/CGGIDialect.cpp.inc"
+#include "lib/Dialect/CGGI/IR/CGGIOpsDialect.cpp.inc"
 #define GET_ATTRDEF_CLASSES
 #include "lib/Dialect/CGGI/IR/CGGIAttributes.cpp.inc"
 #define GET_OP_CLASSES
