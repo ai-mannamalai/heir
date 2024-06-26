@@ -8,9 +8,9 @@
 #include "lib/Dialect/RNS/IR/RNSTypes.h"
 
 // Generated definitions
-#include "lib/Dialect/RNS/IR/RNSDialect.cpp.inc"
+#include "lib/Dialect/RNS/IR/RNSOpsDialect.cpp.inc"
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/RNS/IR/RNSTypes.cpp.inc"
+#include "lib/Dialect/RNS/IR/RNSOpsTypes.cpp.inc"
 #define GET_OP_CLASSES
 #include "lib/Dialect/RNS/IR/RNSOps.cpp.inc"
 #include "lib/Dialect/RNS/IR/RNSTypeInterfaces.cpp.inc"
@@ -22,7 +22,7 @@ namespace rns {
 void RNSDialect::initialize() {
   addTypes<
 #define GET_TYPEDEF_LIST
-#include "lib/Dialect/RNS/IR/RNSTypes.cpp.inc"
+#include "lib/Dialect/RNS/IR/RNSOpsTypes.cpp.inc"
       >();
 
   addOperations<

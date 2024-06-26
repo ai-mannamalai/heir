@@ -6,6 +6,6 @@
 #include "mlir/include/mlir/IR/Dialect.h"   // from @llvm-project
 
 // Generated headers (block clang-format from messing up order)
-#include "lib/Dialect/RNS/IR/RNSDialect.h.inc"
+#include "lib/Dialect/RNS/IR/RNSOpsDialect.h.inc"
 
 #endif  // LIB_DIALECT_RNS_IR_RNSDIALECT_H_

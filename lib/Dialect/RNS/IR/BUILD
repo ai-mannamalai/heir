@@ -10,10 +10,10 @@ package(
 cc_library(
     name = "Dialect",
     srcs = [
-        "RNSDialect.cpp",
+        "RNSOpsDialect.cpp",
     ],
     hdrs = [
-        "RNSDialect.h",
+        "RNSOpsDialect.h",
         "RNSOps.h",
         "RNSTypeInterfaces.h",
         "RNSTypes.h",

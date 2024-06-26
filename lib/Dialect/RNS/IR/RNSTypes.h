@@ -5,7 +5,7 @@
 #include "llvm/include/llvm/ADT/TypeSwitch.h"  // from @llvm-project
 
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/RNS/IR/RNSTypes.h.inc"
+#include "lib/Dialect/RNS/IR/RNSOpsTypes.h.inc"
 
 namespace mlir {
 
