@@ -9,8 +9,8 @@ add_subdirectory(TfheRustBool)
 
 add_subdirectory(BGV)
 add_subdirectory(CGGI)
+add_subdirectory(Secret)
 # IR + Transforms
-# Secret
 # TensorExt
 
 set(LLVM_TARGET_DEFINITIONS HEIRInterfaces.td)

@@ -5,6 +5,6 @@
 #include "mlir/include/mlir/IR/DialectImplementation.h"  // from @llvm-project
 
 // Don't clobber include order
-#include "lib/Dialect/Secret/IR/SecretDialect.h.inc"
+#include "lib/Dialect/Secret/IR/SecretOpsDialect.h.inc"
 
 #endif  // HEIR_LIB_DIALECT_SECRET_IR_SECRETDIALECT_H_

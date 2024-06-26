@@ -1,13 +1,13 @@
 #include "lib/Dialect/Secret/IR/SecretDialect.h"
 
-#include "lib/Dialect/Secret/IR/SecretDialect.cpp.inc"
+#include "lib/Dialect/Secret/IR/SecretOpsDialect.cpp.inc"
 #include "lib/Dialect/Secret/IR/SecretOps.h"
 #include "lib/Dialect/Secret/IR/SecretTypes.h"
 #include "llvm/include/llvm/ADT/TypeSwitch.h"            // from @llvm-project
 #include "mlir/include/mlir/IR/Builders.h"               // from @llvm-project
 #include "mlir/include/mlir/IR/DialectImplementation.h"  // from @llvm-project
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/Secret/IR/SecretTypes.cpp.inc"
+#include "lib/Dialect/Secret/IR/SecretOpsTypes.cpp.inc"
 #define GET_OP_CLASSES
 #include "lib/Dialect/Secret/IR/SecretOps.cpp.inc"
 
@@ -24,7 +24,7 @@ namespace secret {
 void SecretDialect::initialize() {
   addTypes<
 #define GET_TYPEDEF_LIST
-#include "lib/Dialect/Secret/IR/SecretTypes.cpp.inc"
+#include "lib/Dialect/Secret/IR/SecretOpsTypes.cpp.inc"
       >();
   addOperations<
 #define GET_OP_LIST
