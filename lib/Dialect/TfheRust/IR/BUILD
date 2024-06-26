@@ -8,12 +8,12 @@ package(
 cc_library(
     name = "Dialect",
     srcs = [
-        "TfheRustDialect.cpp",
+        "TfheRustOpsDialect.cpp",
     ],
     hdrs = [
-        "TfheRustDialect.h",
+        "TfheRustOpsDialect.h",
         "TfheRustOps.h",
-        "TfheRustTypes.h",
+        "TfheRustOpsTypes.h",
     ],
     deps = [
         ":Patterns",
@@ -31,10 +31,10 @@ cc_library(
     name = "Patterns",
     srcs = ["TfheRustPatterns.cpp"],
     hdrs = [
-        "TfheRustDialect.h",
+        "TfheRustOpsDialect.h",
         "TfheRustOps.h",
-        "TfheRustPatterns.h",
-        "TfheRustTypes.h",
+        "TfheRustOpsPatterns.h",
+        "TfheRustOpsTypes.h",
     ],
     deps = [
         ":dialect_inc_gen",
@@ -67,13 +67,13 @@ gentbl_cc_library(
             [
                 "-gen-dialect-decls",
             ],
-            "TfheRustDialect.h.inc",
+            "TfheRustOpsDialect.h.inc",
         ),
         (
             [
                 "-gen-dialect-defs",
             ],
-            "TfheRustDialect.cpp.inc",
+            "TfheRustOpsDialect.cpp.inc",
         ),
         (
             [
@@ -97,21 +97,21 @@ gentbl_cc_library(
                 "-gen-typedef-decls",
                 "-typedefs-dialect=tfhe_rust",
             ],
-            "TfheRustTypes.h.inc",
+            "TfheRustOpsTypes.h.inc",
         ),
         (
             [
                 "-gen-typedef-defs",
                 "-typedefs-dialect=tfhe_rust",
             ],
-            "TfheRustTypes.cpp.inc",
+            "TfheRustOpsTypes.cpp.inc",
         ),
         (
             [
                 "-gen-typedef-doc",
                 "-typedefs-dialect=tfhe_rust",
             ],
-            "TfheRustTypes.md",
+            "TfheRustOpsTypes.md",
         ),
     ],
     tblgen = "@llvm-project//mlir:mlir-tblgen",

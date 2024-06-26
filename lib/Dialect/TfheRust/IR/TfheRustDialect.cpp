@@ -7,13 +7,13 @@
 #include "mlir/include/mlir/IR/Dominance.h"              // from @llvm-project
 
 // Force import order
-#include "lib/Dialect/TfheRust/IR/TfheRustDialect.cpp.inc"
+#include "lib/Dialect/TfheRust/IR/TfheRustOpsDialect.cpp.inc"
 #include "lib/Dialect/TfheRust/IR/TfheRustOps.h"
 #include "lib/Dialect/TfheRust/IR/TfheRustPatterns.h"
 #include "lib/Dialect/TfheRust/IR/TfheRustTypes.h"
 
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/TfheRust/IR/TfheRustTypes.cpp.inc"
+#include "lib/Dialect/TfheRust/IR/TfheRustOpsTypes.cpp.inc"
 #define GET_OP_CLASSES
 #include "lib/Dialect/TfheRust/IR/TfheRustOps.cpp.inc"
 
@@ -24,7 +24,7 @@ namespace tfhe_rust {
 void TfheRustDialect::initialize() {
   addTypes<
 #define GET_TYPEDEF_LIST
-#include "lib/Dialect/TfheRust/IR/TfheRustTypes.cpp.inc"
+#include "lib/Dialect/TfheRust/IR/TfheRustOpsTypes.cpp.inc"
       >();
   addOperations<
 #define GET_OP_LIST

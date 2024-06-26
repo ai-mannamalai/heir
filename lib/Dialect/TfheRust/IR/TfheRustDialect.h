@@ -9,7 +9,7 @@
 #include "mlir/include/mlir/IR/PatternMatch.h"           // from @llvm-project
 
 // Generated headers (block clang-format from messing up order)
-#include "lib/Dialect/TfheRust/IR/TfheRustDialect.h.inc"
+#include "lib/Dialect/TfheRust/IR/TfheRustOpsDialect.h.inc"
 
 namespace mlir {
 namespace heir {
