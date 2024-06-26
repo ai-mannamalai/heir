@@ -4,6 +4,6 @@
 #include "lib/Dialect/Jaxite/IR/JaxiteDialect.h"
 
 #define GET_TYPEDEF_CLASSES
-#include "lib/Dialect/Jaxite/IR/JaxiteTypes.h.inc"
+#include "lib/Dialect/Jaxite/IR/JaxiteOpsTypes.h.inc"
 
 #endif  // LIB_DIALECT_JAXITE_IR_JAXITETYPES_H_

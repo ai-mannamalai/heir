@@ -8,6 +8,6 @@
 #include "mlir/include/mlir/IR/OpDefinition.h"           // from @llvm-project
 
 // Generated headers (block clang-format from messing up order)
-#include "lib/Dialect/Jaxite/IR/JaxiteDialect.h.inc"
+#include "lib/Dialect/Jaxite/IR/JaxiteOpsDialect.h.inc"
 
 #endif  // LIB_DIALECT_JAXITE_IR_JAXITEDIALECT_H_

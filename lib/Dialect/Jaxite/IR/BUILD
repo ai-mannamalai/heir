@@ -47,13 +47,13 @@ gentbl_cc_library(
             [
                 "-gen-dialect-decls",
             ],
-            "JaxiteDialect.h.inc",
+            "JaxiteOpsDialect.h.inc",
         ),
         (
             [
                 "-gen-dialect-defs",
             ],
-            "JaxiteDialect.cpp.inc",
+            "JaxiteOpsDialect.cpp.inc",
         ),
         (
             [
