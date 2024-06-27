@@ -30,7 +30,7 @@ namespace alignment {
 }  // namespace alignment
 
 namespace canonicalization {
-#include "lib/Dialect/TensorExt/IR/TensorExtCanonicalization.cpp.inc"
+#include "lib/Dialect/TensorExt/IR/TensorExtOpsCanonicalization.cpp.inc"
 }  // namespace canonicalization
 
 struct InsertRotate : impl::InsertRotateBase<InsertRotate> {

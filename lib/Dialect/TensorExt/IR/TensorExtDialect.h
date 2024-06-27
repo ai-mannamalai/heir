@@ -5,6 +5,6 @@
 #include "mlir/include/mlir/IR/Dialect.h"   // from @llvm-project
 
 // Generated headers (block clang-format from messing up order)
-#include "lib/Dialect/TensorExt/IR/TensorExtDialect.h.inc"
+#include "lib/Dialect/TensorExt/IR/TensorExtOpsDialect.h.inc"
 
 #endif  // HEIR_LIB_DIALECT_TensorExt_IR_TensorExtDIALECT_H_

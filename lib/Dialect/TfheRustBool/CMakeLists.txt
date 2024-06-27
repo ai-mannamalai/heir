@@ -16,5 +16,3 @@ add_mlir_dialect_library(MLIRTfheRustBool
         MLIRDialect
         MLIRIR
 )
-
-add_dependencies(MLIRLWE MLIRLWEAttributesIncGen)

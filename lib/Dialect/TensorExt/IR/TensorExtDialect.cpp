@@ -17,7 +17,7 @@
 // NOLINTEND(misc-include-cleaner): Required to define TensorExt
 
 // Generated definitions
-#include "lib/Dialect/TensorExt/IR/TensorExtDialect.cpp.inc"
+#include "lib/Dialect/TensorExt/IR/TensorExtOpsDialect.cpp.inc"
 
 #define GET_OP_CLASSES
 #include "lib/Dialect/TensorExt/IR/TensorExtOps.cpp.inc"

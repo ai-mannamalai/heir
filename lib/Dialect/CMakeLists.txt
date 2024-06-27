@@ -1,17 +1,17 @@
 add_subdirectory(ArithExt)
 add_subdirectory(Jaxite)
 add_subdirectory(PolyExt)
-add_subdirectory(LWE)
 add_subdirectory(Openfhe)
 add_subdirectory(RNS)
 add_subdirectory(TfheRust)
 add_subdirectory(TfheRustBool)
 
+# IR + Transforms
+add_subdirectory(LWE)
 add_subdirectory(BGV)
 add_subdirectory(CGGI)
 add_subdirectory(Secret)
-# IR + Transforms
-# TensorExt
+add_subdirectory(TensorExt)
 
 set(LLVM_TARGET_DEFINITIONS HEIRInterfaces.td)
 mlir_tablegen(HEIRInterfaces.h.inc  --gen-op-interface-decls  -name heir)
