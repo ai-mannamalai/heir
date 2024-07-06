@@ -2,6 +2,8 @@ add_subdirectory(IR)
 add_subdirectory(Transforms)
 add_mlir_dialect_library(MLIRSecret
         IR/SecretDialect.cpp
+        IR/SecretOps.cpp
+        IR/SecretPatterns.cpp
         Transforms/BufferizableOpInterfaceImpl.cpp
         Transforms/CaptureGenericAmbientScope.cpp
         Transforms/DistributeGeneric.cpp

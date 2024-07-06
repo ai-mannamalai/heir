@@ -1,5 +1,5 @@
 
-add_mlir_dialect_library(MLIRVerilogtTarget
+add_mlir_dialect_library(MLIRVerilogTarget
         VerilogEmitter.cpp
         
         ADDITIONAL_HEADER_DIRS
@@ -9,6 +9,7 @@ add_mlir_dialect_library(MLIRVerilogtTarget
         MLIRSecretOpsIncGen
 
 	LINK_LIBS PUBLIC
+    MLIRAffineDialect
 	MLIRSecret
     MLIRIR
     MLIRInferTypeOpInterface

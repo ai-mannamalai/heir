@@ -11,7 +11,6 @@ add_subdirectory(LWE)
 add_subdirectory(BGV)
 add_subdirectory(CGGI)
 add_subdirectory(Secret)
-add_subdirectory(TensorExt)
 
 set(LLVM_TARGET_DEFINITIONS HEIRInterfaces.td)
 mlir_tablegen(HEIRInterfaces.h.inc  --gen-op-interface-decls  -name heir)
@@ -20,3 +19,5 @@ add_public_tablegen_target(MLIRHEIRInterfaces)
 
 add_subdirectory(Comb) #- requires HEIR interface
 add_dependencies(MLIRCombOpsIncGen MLIRHEIRInterfaces)
+
+add_subdirectory(TensorExt)

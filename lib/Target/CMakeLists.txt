@@ -3,10 +3,8 @@ add_mlir_library(MLIRHEIRTargetUtils STATIC
 
         ADDITIONAL_HEADER_DIRS
         ${CMAKE_CURRENT_SOURCE_DIR}/IR
-
-	    LINK_LIBS PUBLIC
-	    MLIRIR
-        MLIRInferTypeOpInterface
+	LINK_LIBS PUBLIC
+	MLIRInferTypeOpInterface
         MLIRArithDialect
         MLIRSupport
         MLIRDialect
