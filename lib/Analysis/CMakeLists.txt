@@ -1,4 +1,4 @@
 add_subdirectory(RotationAnalysis)
 add_subdirectory(TargetSlotAnalysis)
 add_subdirectory(SelectVariableNames)
-add_subdirectory(RotationalAnalysis)
+
