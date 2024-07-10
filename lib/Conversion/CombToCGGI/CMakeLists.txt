@@ -12,6 +12,10 @@ add_mlir_dialect_library(MLIRCombTransforms
 	MLIRCombtTransformsIncGen
 
 	LINK_LIBS PUBLIC
+
+        MLIRHEIRUtils
+	MLIRLWE
+	MLIRSecret
 	MLIRComb
 	MLIRCGGI
 	MLIRIR

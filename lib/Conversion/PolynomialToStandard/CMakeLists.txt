@@ -12,8 +12,23 @@ add_mlir_dialect_library(MLIRPolynomialTransforms
 	MLIRPolynomialTransformsIncGen
 
 	LINK_LIBS PUBLIC
+
+	MLIRHEIRUtils
+	
+        MLIRAffineDialect
+        MLIRArithDialect
+	MLIRDialectUtils
+	MLIRFuncDialect
+	MLIRFuncTransforms
+	MLIRLLVMDialect
+	MLIRLinalgDialect
+        MLIRSCFDialect
+	MLIRTensorDialect
+	
 	MLIRPolynomialDialect
-	MLIRIR
+
+	MLIRTransformUtils
+	MLIRPass
 	MLIRInferTypeOpInterface
 	MLIRArithDialect
 	MLIRSupport

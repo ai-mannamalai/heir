@@ -12,9 +12,22 @@ add_mlir_dialect_library(MLIRSecretTransforms
 	MLIRSecretTransformsIncGen
 
 	LINK_LIBS PUBLIC
-	MLIRSecret
-	MLIRBGV
-	MLIRIR
+	MLIRHEIRUtils
+	
+        MLIRAffineDialect
+        MLIRArithDialect
+	MLIRDialectUtils
+	MLIRFuncDialect
+	MLIRFuncTransforms
+	MLIRLLVMDialect
+	MLIRLinalgDialect
+        MLIRSCFDialect
+	MLIRTensorDialect
+	
+	MLIRPolynomialDialect
+
+	MLIRTransformUtils
+	MLIRPass
 	MLIRInferTypeOpInterface
 	MLIRArithDialect
 	MLIRSupport
