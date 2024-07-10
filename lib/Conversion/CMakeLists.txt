@@ -26,3 +26,5 @@ add_subdirectory(CombToCGGI)
 add_subdirectory(BGVToOpenfhe)
 add_subdirectory(BGVToPolynomial)
 add_subdirectory(CGGIToTfheRust)
+add_subdirectory(CGGIToTfheRustBool)
+
