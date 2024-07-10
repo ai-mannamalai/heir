@@ -340,7 +340,7 @@ struct ConvertExtractOp : public OpConversionPattern<ExtractOp> {
     oneHotCleartextAttrs.reserve(degree);
     for (size_t i = 0; i < degree; ++i) {
       oneHotCleartextAttrs.push_back(
-          rewriter.getIntegerAttr(elementTy, i == offset ? 1 : 0));
+      rewriter.getIntegerAttr(elementTy, static_cast<int64_t>(i) == offset ? 1 : 0));
     }
 
     auto b = ImplicitLocOpBuilder(op->getLoc(), rewriter);
