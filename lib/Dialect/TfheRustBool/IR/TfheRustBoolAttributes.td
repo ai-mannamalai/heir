@@ -16,13 +16,20 @@ def TfheRustBoolGate_Attr : TfheRustBool_Attr<"TfheRustBoolGate", "tfhe_rust_boo
   let summary = "An Attribute containing an array of strings to store bool gates";
 
   let description = [{
-    This attributes stores a list of string identifiers for Boolean gates.
+     This attributes stores a list of string identifiers for Boolean gates.
 
-     This used in the `tfhe_rust_bool.packed_gates` operation to indicate the boolean gate that applies pairwise between elements of two ciphertext arrays. For example,
+     This used in the `tfhe_rust_bool.packed_gates` operation to indicate the boolean 
+     gate that applies pairwise between elements of two ciphertext arrays. For example,
 
-     %0 = tfhe_rust_bool.packed_gates %a, %b {gates = #tfhe_rust_bool.tfhe_rust_bool_gate<"and", "xor">} : (!tfhe_rust_bool.server_key, tensor<2x!tfhe_rust_bool.eb>, tensor<2x!tfhe_rust_bool.eb>) -> tensor<2x!tfhe_rust_bool.eb>
+     ```mlir
+     %0 = tfhe_rust_bool.packed_gates %a, %b {gates = <"and", "xor">} : 
+         (!tfhe_rust_bool.server_key, 
+          tensor<2x!tfhe_rust_bool.eb>, 
+          tensor<2x!tfhe_rust_bool.eb>) -> tensor<2x!tfhe_rust_bool.eb>
+     ```
 
-     applies an "and" gate between the first elements of %a and %b and an xor gate between the second elements.
+     applies an "and" gate to the first elements of %a and %b and an xor gate to the
+     second elements.
   }];
 
   let parameters = (ins
