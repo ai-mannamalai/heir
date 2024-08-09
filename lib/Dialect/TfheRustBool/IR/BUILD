@@ -47,21 +47,15 @@ gentbl_cc_library(
     name = "dialect_inc_gen",
     tbl_outs = [
         (
-            [
-                "-gen-dialect-decls",
-            ],
+            ["-gen-dialect-decls"],
             "TfheRustBoolDialect.h.inc",
         ),
         (
-            [
-                "-gen-dialect-defs",
-            ],
+            ["-gen-dialect-defs"],
             "TfheRustBoolDialect.cpp.inc",
         ),
         (
-            [
-                "-gen-dialect-doc",
-            ],
+            ["-gen-dialect-doc"],
             "TfheRustBoolDialect.md",
         ),
     ],

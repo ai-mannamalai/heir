@@ -5,11 +5,11 @@ include "lib/Dialect/TfheRustBool/IR/TfheRustBoolDialect.td"
 include "lib/Dialect/TfheRustBool/IR/TfheRustBoolTypes.td"
 include "lib/Dialect/TfheRustBool/IR/TfheRustBoolAttributes.td"
 
-include "mlir/IR/BuiltinAttributes.td"
-include "mlir/IR/CommonTypeConstraints.td"
 include "mlir/IR/OpBase.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
+include "mlir/IR/BuiltinAttributes.td"
 include "mlir/IR/BuiltinTypes.td"
+include "mlir/IR/CommonTypeConstraints.td"
 include "mlir/IR/CommonAttrConstraints.td"
 
 
@@ -51,11 +51,13 @@ def TfheRustBool_NorOp  : TfheRustBool_BinaryGateOp<"nor">  { let summary = "Log
 def TfheRustBool_XorOp : TfheRustBool_BinaryGateOp<"xor"> { let summary = "Logical XOR of two TFHE-rs Bool ciphertexts."; }
 def TfheRustBool_XnorOp : TfheRustBool_BinaryGateOp<"xnor"> { let summary = "Logical XNOR of two TFHE-rs Bool ciphertexts."; }
 
+
 def TfheRustBool_PackedOp : TfheRustBool_Op<"gates_packed", [
     Pure]> {
   let arguments = (ins
     TfheRustBool_ServerKey:$serverKey,
-    TfheRustBoolGate_Attr:$gates,
+    // ArrayAttr<"mlir::StringAttr">: $gate,
+    StrArrayAttr: $gate,
     TfheRustBoolLike:$lhs,
     TfheRustBoolLike:$rhs
   );

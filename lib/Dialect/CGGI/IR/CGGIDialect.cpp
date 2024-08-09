@@ -2,6 +2,7 @@
 
 // NOLINTNEXTLINE(misc-include-cleaner): Required to define CGGIOps
 #include "lib/Dialect/CGGI/IR/CGGIAttributes.h"
+#include "lib/Dialect/CGGI/IR/CGGIEnums.h"
 #include "lib/Dialect/CGGI/IR/CGGIOps.h"
 #include "mlir/include/mlir/IR/Diagnostics.h"         // from @llvm-project
 #include "mlir/include/mlir/Support/LogicalResult.h"  // from @llvm-project
@@ -10,6 +11,8 @@
 #include "lib/Dialect/CGGI/IR/CGGIDialect.cpp.inc"
 #define GET_ATTRDEF_CLASSES
 #include "lib/Dialect/CGGI/IR/CGGIAttributes.cpp.inc"
+#define GET_TYPEDEF_CLASSES
+#include "lib/Dialect/CGGI/IR/CGGIEnums.cpp.inc"
 #define GET_OP_CLASSES
 #include "lib/Dialect/CGGI/IR/CGGIOps.cpp.inc"
 
@@ -35,23 +38,6 @@ void CGGIDialect::initialize() {
 
   getContext()->getOrLoadDialect("lwe");
 }
-
-LogicalResult PackedOp::verify() {
-  auto attrList = getGates().getGate();
-
-  for (auto gate : attrList) {
-    std::string gateStr = std::string(gate.data());
-    if (gateStr.compare("AND") || gateStr.compare("NAND") ||
-        gateStr.compare("OR") || gateStr.compare("NOR") ||
-        gateStr.compare("XOR") || gateStr.compare("XNOR")) {
-      return success();
-    }
-
-    return emitOpError() << "Impossible Boolean gate found `" << gateStr
-                         << "`.";
-  }
-}
-
 }  // namespace cggi
 }  // namespace heir
 }  // namespace mlir

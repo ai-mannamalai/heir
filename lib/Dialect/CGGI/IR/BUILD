@@ -14,11 +14,13 @@ cc_library(
     hdrs = [
         "CGGIAttributes.h",
         "CGGIDialect.h",
+        "CGGIEnums.h",
         "CGGIOps.h",
     ],
     deps = [
         ":attributes_inc_gen",
         ":dialect_inc_gen",
+        ":enums_inc_gen",
         ":ops_inc_gen",
         "@heir//lib/Dialect:HEIRInterfaces",
         "@heir//lib/Dialect/LWE/IR:Dialect",
@@ -34,6 +36,7 @@ td_library(
     srcs = [
         "CGGIAttributes.td",
         "CGGIDialect.td",
+        "CGGIEnums.td",
         "CGGIOps.td",
     ],
     # include from the heir-root to enable fully-qualified include-paths
@@ -100,15 +103,11 @@ gentbl_cc_library(
     name = "attributes_inc_gen",
     tbl_outs = [
         (
-            [
-                "-gen-attrdef-decls",
-            ],
+            ["-gen-attrdef-decls"],
             "CGGIAttributes.h.inc",
         ),
         (
-            [
-                "-gen-attrdef-defs",
-            ],
+            ["-gen-attrdef-defs"],
             "CGGIAttributes.cpp.inc",
         ),
         (
@@ -120,6 +119,30 @@ gentbl_cc_library(
     td_file = "CGGIAttributes.td",
     deps = [
         ":dialect_inc_gen",
+        ":enums_inc_gen",
+        ":td_files",
+    ],
+)
+
+gentbl_cc_library(
+    name = "enums_inc_gen",
+    tbl_outs = [
+        (
+            ["-gen-enum-decls"],
+            "CGGIEnums.h.inc",
+        ),
+        (
+            ["--gen-enum-defs"],
+            "CGGIEnums.cpp.inc",
+        ),
+        (
+            ["-gen-attrdef-doc"],
+            "CGGIEnums.md",
+        ),
+    ],
+    tblgen = "@llvm-project//mlir:mlir-tblgen",
+    td_file = "CGGIEnums.td",
+    deps = [
         ":td_files",
     ],
 )
