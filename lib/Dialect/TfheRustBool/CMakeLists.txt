@@ -9,6 +9,7 @@ add_mlir_dialect_library(MLIRTfheRustBool
         MLIRTfheRustBoolIncGen
         MLIRTfheRustBoolOpsIncGen
         MLIRTfheRustBoolOpsTypesIncGen
+        MLIRTfheRustBoolAttributesIncGen
 
         LINK_LIBS PUBLIC
         MLIRIR
