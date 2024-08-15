@@ -13,12 +13,16 @@
 #include "lib/Dialect/TfheRustBool/IR/TfheRustBoolOps.h"
 #include "lib/Dialect/TfheRustBool/IR/TfheRustBoolTypes.h"
 #include "llvm/include/llvm/ADT/SmallVector.h"           // from @llvm-project
+#include "llvm/include/llvm/ADT/TypeSwitch.h"            // from @llvm-project
 #include "llvm/include/llvm/Support/Casting.h"           // from @llvm-project
+#include "mlir/include/mlir/Analysis/SliceAnalysis.h"    // from @llvm-project
+#include "mlir/include/mlir/Dialect/Arith/IR/Arith.h"    // from @llvm-project
 #include "mlir/include/mlir/Dialect/Func/IR/FuncOps.h"   // from @llvm-project
 #include "mlir/include/mlir/Dialect/MemRef/IR/MemRef.h"  // from @llvm-project
 #include "mlir/include/mlir/Dialect/Tensor/IR/Tensor.h"  // from @llvm-project
 #include "mlir/include/mlir/IR/BuiltinTypeInterfaces.h"  // from @llvm-project
 #include "mlir/include/mlir/IR/BuiltinTypes.h"           // from @llvm-project
+#include "mlir/include/mlir/IR/Dialect.h"                // from @llvm-project
 #include "mlir/include/mlir/IR/ImplicitLocOpBuilder.h"   // from @llvm-project
 #include "mlir/include/mlir/IR/PatternMatch.h"           // from @llvm-project
 #include "mlir/include/mlir/IR/Visitors.h"               // from @llvm-project
@@ -48,7 +52,7 @@ class CGGIToTfheRustBoolTypeConverter : public TypeConverter {
 // Returns true if the func's body contains any CGGI or LWE ops.
 bool containsCGGIBoolOrLWEOps(func::FuncOp func) {
   auto walkResult = func.walk([&](Operation *op) {
-    auto dialect = op->getDialect();
+    auto *dialect = op->getDialect();
     if (llvm::isa<cggi::CGGIDialect>(dialect) ||
         llvm::isa<lwe::LWEDialect>(dialect))
       return WalkResult::interrupt();
@@ -193,11 +197,20 @@ struct ConvertPackedOp : public OpConversionPattern<cggi::PackedOp> {
     if (failed(result)) return result;
 
     Value serverKey = result.value();
-    cggi::CGGIGateAttr gateAtrr = adaptor.getGatesAttr();
+    // cggi::CGGIGateAttr gateAtrr = adaptor.getGatesAttr();
     auto context = getContext();
 
-    auto oplist =
-        tfhe_rust_bool::TfheRustBoolGateAttr::get(context, gateAtrr.getGate());
+    SmallVector<mlir::Attribute, 4> vectorizedGateOperands;
+    vectorizedGateOperands.push_back(
+        StringAttr::get(context, std::string("AND")));
+
+    // auto gates = llvm::ArrayRef<mlir::Attribute>(vectorizedGateOperands);
+    auto oplist = mlir::ArrayAttr::get(context, vectorizedGateOperands);
+
+    // auto oplist = ArrayAttr::get(context, vectorizedGateOperands);
+
+    // auto oplist = gateAtrr.getGate();
+    // tfhe_rust_bool::TfheRustBoolGateAttr::get(context, gateAtrr.getGate());
 
     auto outputType = adaptor.getLhs().getType();
 

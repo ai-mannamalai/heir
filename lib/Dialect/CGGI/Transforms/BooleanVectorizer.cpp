@@ -1,8 +1,9 @@
 #include "lib/Dialect/CGGI/Transforms/BooleanVectorizer.h"
 
-#include <string>
+#include <cstdint>
 
 #include "lib/Dialect/CGGI/IR/CGGIAttributes.h"
+#include "lib/Dialect/CGGI/IR/CGGIEnums.h"
 #include "lib/Dialect/CGGI/IR/CGGIOps.h"
 #include "lib/Dialect/LWE/IR/LWEAttributes.h"
 #include "lib/Graph/Graph.h"
@@ -119,23 +120,26 @@ bool tryBoolVectorizeBlock(Block *block, MLIRContext &context) {
           {static_cast<int64_t>(bucket.size())}, elementType);
 
       SmallVector<Value, 4> vectorizedOperands;
-      SmallVector<StringAttr, 4> vectorizedGateOperands;
+      SmallVector<BoolGateEnumAttr, 4> vectorizedGateOperands;
 
       for (auto *op : bucket) {
         auto gateStr =
-            llvm::TypeSwitch<Operation *, FailureOr<std::string>>(op)
-                .Case<cggi::AndOp>([](AndOp op) { return std::string("and"); })
+            llvm::TypeSwitch<Operation *, FailureOr<BoolGateEnum>>(op)
+                .Case<cggi::AndOp>(
+                    [](AndOp op) { return BoolGateEnum::bg_and; })
                 .Case<cggi::NandOp>(
-                    [](NandOp op) { return std::string("nand"); })
-                .Case<cggi::XorOp>([](XorOp op) { return std::string("xor"); })
+                    [](NandOp op) { return BoolGateEnum::bg_nand; })
+                .Case<cggi::XorOp>(
+                    [](XorOp op) { return BoolGateEnum::bg_xor; })
                 .Case<cggi::XNorOp>(
-                    [](XNorOp op) { return std::string("xnor"); })
-                .Case<cggi::OrOp>([](OrOp op) { return std::string("or"); })
-                .Case<cggi::NorOp>([](NorOp op) { return std::string("nor"); })
-                .Default([](Operation *) { return FailureOr<std::string>(); });
+                    [](XNorOp op) { return BoolGateEnum::bg_xnor; })
+                .Case<cggi::OrOp>([](OrOp op) { return BoolGateEnum::bg_or; })
+                .Case<cggi::NorOp>(
+                    [](NorOp op) { return BoolGateEnum::bg_nor; })
+                .Default([](Operation *) { return FailureOr<BoolGateEnum>(); });
 
         vectorizedGateOperands.push_back(
-            StringAttr::get(&context, gateStr.value()));
+            BoolGateEnumAttr::get(&context, gateStr.value()));
       }
 
       // Group the independent operands over the operations
@@ -173,7 +177,7 @@ bool tryBoolVectorizeBlock(Block *block, MLIRContext &context) {
         llvm::dbgs() << "\n";
       });
 
-      auto oplist = CGGIGateAttr::get(&context, vectorizedGateOperands);
+      auto oplist = CGGIBoolGatesAttr::get(&context, vectorizedGateOperands);
 
       auto vectorizedOp = builder.create<cggi::PackedOp>(
           key->getLoc(), tensorType, oplist, vectorizedOperands[0],

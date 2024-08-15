@@ -4,6 +4,7 @@
 include "lib/Dialect/HEIRInterfaces.td"
 include "lib/Dialect/CGGI/IR/CGGIDialect.td"
 include "lib/Dialect/CGGI/IR/CGGIAttributes.td"
+// include "lib/Dialect/CGGI/IR/CGGITypes.td"
 
 include "mlir/Dialect/Polynomial/IR/PolynomialAttributes.td"
 include "lib/Dialect/LWE/IR/LWETypes.td"
@@ -11,6 +12,7 @@ include "lib/Dialect/LWE/IR/LWETypes.td"
 include "mlir/IR/OpBase.td"
 include "mlir/IR/BuiltinAttributes.td"
 include "mlir/IR/CommonAttrConstraints.td"
+include "mlir/IR/CommonTypeConstraints.td"
 include "mlir/Interfaces/InferTypeOpInterface.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
@@ -60,17 +62,15 @@ def CGGI_NotOp : CGGI_Op<"not", [
 }
 
 def CGGI_PackedOp : CGGI_Op<"packed_gates", [
-    Pure,
-    SameOperandsAndResultType
+    Pure
 ]> {
   let arguments = (ins
-    CGGIGate_Attr:$gates,
+    CGGI_CGGIBoolGates:$gates,
     LWECiphertextLike:$lhs,
     LWECiphertextLike:$rhs
   );
 
   let results = (outs LWECiphertextLike:$output);
-  let hasVerifier = 1;
 }
 
 class CGGI_LutOp<string mnemonic, list<Trait> traits = []>
